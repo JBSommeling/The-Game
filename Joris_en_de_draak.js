@@ -40,7 +40,7 @@ function fight() {
 	}
 	else {
 		if (power >=2){
-			alert('Met je Hero Sword had je genoeg kracht om de draak te verslaan.');
+			alert('Met je '+ armory + ' had je genoeg kracht om de draak te verslaan.');
 			dragon = true;
 			var safePrincess = prompt('Wil je de princess alsnog redden? ja of nee?');
 			if ( safePrincess == 'ja' && stamina >=3){
@@ -53,7 +53,7 @@ function fight() {
 			}
 		}
 		else {
-			alert ('Je hebt de draak niet kunnen doden, je had te weinig power over.');
+			alert ('Met je ' + armory + ' heb je de draak niet kunnen doden, je had te weinig power over.');
 			dragon = false;
 			var safePrincess = prompt('Wil je de princess alsnog redden of ga je voor de poen? geld of princess?');
 			if (safePrincess == 'geld') {
@@ -118,7 +118,7 @@ else if (money === 'enough') {
 	power = power + 2;
 }
 else if (money === 'plenty') {
-	armory = 'Hero Sword and Armor';
+	armory = 'Hero Sword en Armor';
 	power = power + 3
 }
 
@@ -143,5 +143,6 @@ else {
 
 //Alle eindes controleren. Mogelijk met document.write.
 //Ending maken met geld keuze
+// concentration verwijderen. Armory implementeren
 
 
