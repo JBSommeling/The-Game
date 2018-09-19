@@ -75,7 +75,7 @@ function fight() {
 function decision() {
 	console.log('Ending thema');
 	if (dragon == true && princess == true) {
-		alert('Je hebt zowel de draak gedood en de princess gered.'); // courage om haar ten huwelijk te vragen
+		alert('Je hebt zowel de draak gedood en de princess gered.'); 
 		power = 0;
 		alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
 		alert('Het is nu alweer een tijdje geleden dat jij de prinses gered hebt. Je ziet dat ze met Prince Adam (\'van Beauty and the Beast\') aan het flirten is.');
@@ -91,7 +91,7 @@ function decision() {
 			alert('Ze gaat er met prins Adam vandoor. Had nu dan toch voor het geld gekozen! Mogelijk was je courage toch te laag...');
 			alert('Dan maar snoepen bij de buren. Je ziet sneeuwwitje staan, die lijkt je ook wel wat....');
 			console.log ('Trouwen met sneeuwwitje anders?');
-			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ')');
+			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ')');// deze wordt niet weergegeven??
 			if (marriageSecond !== 'nee' && gold >= 15){
 				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
 				alert('Jullie leefden nog lang en gelukkig!');
