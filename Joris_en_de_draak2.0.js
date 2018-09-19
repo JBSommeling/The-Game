@@ -35,7 +35,7 @@ var preparation = prompt('Tijd voor de voorbereiding! Wil je trainen (+1 power e
 
 function fight() {
 	console.log('Het grote gevecht tegen de draak.');
-	if (life <=70 ) {
+	if (life <=40 ) {
 		alert("Je bent bijna doodgegaan. Je hebt de draak niet kunnen verslaan. Je had te weinig levens over toen hij je zwaar verwonde met zijn helse staart. Waar kwam ie vandaan!?.")
 		dragon = false;
 		princess = false;
@@ -45,7 +45,7 @@ function fight() {
 			alert('Je had genoeg kracht over om de draak te verslaan.');
 			dragon = true;
 			console.log('Prinses redden of ga je voor de poen?');
-			var safePrincess = prompt('Achter de draak zie je een zak goud. De weg achter je stort in door het hevige gevecht. Wil je de princess redden en de zak goud achterlaten? ja of nee?');
+			var safePrincess = prompt('Achter de draak zie je een zak goud. De weg achter je stort in door het hevige gevecht. Wil je de princess redden en de zak goud achterlaten? ja/nee?');
 			if ( safePrincess == 'ja'){
 				alert('Je hebt de princess gered!');
 				princess = true;
@@ -59,7 +59,7 @@ function fight() {
 			alert ('Je hebt de draak niet kunnen doden, je had te weinig power over.');
 			dragon = false;
 			console.log('Prinses redden of ga je voor de poen?');
-			var safePrincess = prompt('Achter de draak zie je een zak goud. De weg achter je stort in door het hevige gevecht. Wil je de princess redden en de zak goud achterlaten?');
+			var safePrincess = prompt('Achter de draak zie je een zak goud. De weg achter je stort in door het hevige gevecht. Wil je de princess redden en de zak goud achterlaten? ja/nee?');
 			if (safePrincess == 'nee') {
 				alert ('Je hebt de princess niet gered. Je ging voor de poen. Je bent nu steenrijk! Misschien dat je sneeuwwitje het hof kunt maken met je doekoe\'s'); //ending maken
 				princess = false;
@@ -80,7 +80,7 @@ function decision() {
 		alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
 		alert('Het is nu alweer een tijdje geleden dat jij de prinses gered hebt. Je ziet dat ze met Prince Adam (\'van Beauty and the Beast\') aan het flirten is.');
 		console.log('Trouwen of niet trouwen');
-		var marriage = prompt('De nood om met haar te trouwen is hoog, vooral nu het nog kan. Wil je met haar trouwen? Je hebt minimaal 3 courage nodig. (' + courage + ')');
+		var marriage = prompt('De nood om met haar te trouwen is hoog, vooral nu het nog kan. Wil je met haar trouwen? Je hebt minimaal 3 courage nodig. (' + courage + ') ja/nee?');
 		if (marriage !== 'nee' && courage > 2) {
 			courage = 0;
 			alert('Gefeliciteerd je gaat met haar trouwen!');
@@ -91,7 +91,7 @@ function decision() {
 			alert('Ze gaat er met prins Adam vandoor. Had nu dan toch voor het geld gekozen! Mogelijk was je courage toch te laag...');
 			alert('Dan maar snoepen bij de buren. Je ziet sneeuwwitje staan, die lijkt je ook wel wat....');
 			console.log ('Trouwen met sneeuwwitje anders?');
-			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ')');
+			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ') ja/nee?');
 			if (marriageSecond !== 'nee' && gold >= 15){
 				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
 				alert('Jullie leefden nog lang en gelukkig!');
@@ -109,7 +109,7 @@ function decision() {
 	else if (dragon == true || princess == true) {
 		alert('Je hebt je missie niet helemaal gehaald. De prinses is vast boos op je.');
 		alert('Een poostje later hoor je alsnog dat de prinses er met een ander vandoor is gegaan. Je hebt je leven voor niets geriskeerd, of wel soms??');
-		var marriage = prompt ('Je ziet Pocahontas met Sneeuwwitje ruziemaken. Het ging over de held die de draak probeerde te verslaan. Daar ben je dan! Wil je met Sneeuwwitje trouwen? Ze is een dure dame en je hebt minimaal 15 goudstukken nodig  (' + gold + ') ');
+		var marriage = prompt ('Je ziet Pocahontas met Sneeuwwitje ruziemaken. Het ging over de held die de draak probeerde te verslaan. Daar ben je dan! Wil je met Sneeuwwitje trouwen? Ze is een dure dame en je hebt minimaal 15 goudstukken nodig  (' + gold + ') ja/nee? ');
 		if (marriage != 'nee' && gold >= 15){
 				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
 				alert('Jullie leefden nog lang en gelukkig');
@@ -125,7 +125,7 @@ function decision() {
 	}	
 	else if (dragon == false && princess == false) {
 		alert('Je hebt zowel de draak niet kunnen verslaan, je bent ternauwernood ontsnapt! Heb je ook de prinses niet kunnen redden, wat jammer!');
-		alert('Je besluit door de schande om celibaat door het leven te gaan. Geen gelukkig einde!');
+		alert('Je besluit door de schande om celibaat door het leven te gaan. Geen gelukkig einde! Je bent geen held geworden zoals je droomde.');
 		alert('Probeer het opnieuw en let goed op je levens voordat je tegen de draak gaat vechten!');
 
 	}
@@ -133,7 +133,7 @@ function decision() {
 
 console.log('Goedemorgen avonturier!')
 alert('Goedemorgen! Jij bent Jonkheer Joris, een doodnormale Jonkheer zonder speciale talenten. Je wilt jezelf later beroemd maken en ooit met een mooie prinses trouwen! Je voelt dat dit een dag is vol avontuur!');
-var rise = prompt ('Je ligt in bed. De nacht ervoor heb je een hevige zwaardtraining achter de rug. Wil je opstaan? Je krijgt dan gelijk +2 courage en + 1 power en -30 life, stoere vent dat je bent! Anders slaap je uit en begin je je avontuur met volledige levens');
+var rise = prompt ('Je ligt in bed. De nacht ervoor heb je een hevige zwaardtraining achter de rug. Wil je opstaan? Je krijgt dan gelijk +2 courage en + 1 power en -30 life, stoere vent dat je bent! Anders slaap je uit en begin je je avontuur met volledige levens. ja/nee?');
 if (rise == 'ja') {
 	life = life - 30;
 	courage = courage + 2;
@@ -146,7 +146,7 @@ else if (!(rise == 'ja')) {
 
 alert('Je loopt door het bos en ziet twee clans bandieten een krijger aanvallen. Zo te zien hebben ze ruzie met de krijger, maar ook met elkaar....Jonkheer Joris kijkt toe.');
 console.log('De krijger in nood');
-var help = prompt('Ga je de krijger in nood helpen? Ja/Nee?');
+var help = prompt('Ga je de krijger in nood helpen? ja/nee?');
 if (help == 'ja') {
 	alert('Je weet ternauwernood te ontsnappen aan een dodelijke slag, met als gevolg dat je geraakt bent. Je hebt mooi wat goudstukken van de bandietten kunnen stelen');
 	life = life - 30;
@@ -166,7 +166,7 @@ console.log('De boel looten of niet?');
 alert('De krijger maakt de laatste paar bandieten dood, maar raakt wel zwaar gewond. Hij legt uit dat hij op een missie is; hij moet de prinses redden van de Draak!');
 alert('Zo nobel als jij bent, neem jij de taak op je van de gewonde krijger. Misschien is die prinses ook eens een mooie dame == win/win');
 alert('Je kijkt naar de lijken van de bandietten en bedenkt jezelf..');
-var loot = prompt('Zal ik gaan looten? Voor een bijdrage van 10 gold (' + gold + '), maar gaat wel ten koste van je courage -1. (' + courage + '). Als je niet loot, komt er 1 courage bij.');
+var loot = prompt('Zal ik gaan looten? Voor een bijdrage van 10 gold (' + gold + '), maar gaat wel ten koste van je courage -1. (' + courage + '). Als je niet loot, komt er 1 courage bij. ja/nee?');
 if (loot == 'ja') {
 	gold = gold + 10;
 	courage = courage - 1;
@@ -178,7 +178,7 @@ alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt
 
 //Boodschappen:
 console.log('Boodschappen doen');
-var shopping = prompt('Je hebt nu' + gold + ' goudstukken. Wil je er mee winkelen voordat je de draak gaat uitdagen?');
+var shopping = prompt('Je hebt nu' + gold + ' goudstukken. Wil je er mee winkelen voordat je de draak gaat uitdagen? ja/nee?');
 if (shopping == 'ja') {
 	if (gold == 15) {
 		armory = 'Hero Sword & Armor';
@@ -212,7 +212,7 @@ prep();
 alert('Je voelt je net Rocky, goed bezig man!');
 alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
 console.log('Alvast tegen de draak vechten of nog doortrainen?');
-var moreTraining = prompt('Wil je alvast tegen de draak vechten? (ja of nee?)');
+var moreTraining = prompt('Wil je alvast tegen de draak vechten? ja/nee?');
 if (moreTraining == 'ja') {
 	fight();
 	decision();
