@@ -1,9 +1,9 @@
 var life = 100;
 var gold = 0;
-var power = 1;
-var courage = 2;
+var power = 0;
+var courage = 0;
 
-var armory = 0;
+var armory = 'Dummy Sword';
 var dragon = false;
 var princess = false;
 
@@ -84,14 +84,14 @@ function decision() {
 		if (marriage !== 'nee' && courage > 2) {
 			courage = 0;
 			alert('Gefeliciteerd je gaat met haar trouwen!');
-			alert('Jullie leefden nog lang en gelukkig!');
+			alert('Jullie leefden nog lang en gelukkig! Je hebt gewonnen!');
 		}
 		else if (marriage =='nee' || courage <= 2) {
 			courage = 0;
 			alert('Ze gaat er met prins Adam vandoor. Had nu dan toch voor het geld gekozen! Mogelijk was je courage toch te laag...');
 			alert('Dan maar snoepen bij de buren. Je ziet sneeuwwitje staan, die lijkt je ook wel wat....');
 			console.log ('Trouwen met sneeuwwitje anders?');
-			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ')');// deze wordt niet weergegeven??
+			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ')');
 			if (marriageSecond !== 'nee' && gold >= 15){
 				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
 				alert('Jullie leefden nog lang en gelukkig!');
@@ -109,12 +109,12 @@ function decision() {
 	else if (dragon == true || princess == true) {
 		alert('Je hebt je missie niet helemaal gehaald. De prinses is vast boos op je.');
 		alert('Een poostje later hoor je alsnog dat de prinses er met een ander vandoor is gegaan. Je hebt je leven voor niets geriskeerd, of wel soms??');
-		var marriage = ('Je ziet Pocahontas met Sneeuwwitje ruziemaken. Het ging over de held die de draak probeerde te verslaan. Daar ben je dan! Wil je met Sneeuwwitje trouwen? Ze is een dure dame en je hebt minimaal 15 goudstukken nodig  (' + gold + ') ');
-		if (marriage !== 'nee' && gold >= 15){
+		var marriage = prompt ('Je ziet Pocahontas met Sneeuwwitje ruziemaken. Het ging over de held die de draak probeerde te verslaan. Daar ben je dan! Wil je met Sneeuwwitje trouwen? Ze is een dure dame en je hebt minimaal 15 goudstukken nodig  (' + gold + ') ');
+		if (marriage != 'nee' && gold >= 15){
 				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
 				alert('Jullie leefden nog lang en gelukkig');
 			}
-			else if (marriage !== 'nee' && gold < 15) {
+			else if (marriage != 'nee' && gold < 15) {
 				alert('Arme sloeber dat je bent. Je had te weinig goudstukken over om met Sneeuwwitje te trouwen. Pocahontas daarentegen lijkt je ook wel wat....');
 				alert('Einde!');
 			}
@@ -131,8 +131,20 @@ function decision() {
 	}
 }
 
+console.log('Goedemorgen avonturier!')
+alert('Goedemorgen! Jij bent Jonkheer Joris, een doodnormale Jonkheer zonder speciale talenten. Je wilt jezelf later beroemd maken en ooit met een mooie prinses trouwen! Je voelt dat dit een dag is vol avontuur!');
+var rise = prompt ('Je ligt in bed. De nacht ervoor heb je een hevige zwaardtraining achter de rug. Wil je opstaan? Je krijgt dan gelijk +2 courage en + 1 power en -30 life, stoere vent dat je bent! Anders slaap je uit en begin je je avontuur met volledige levens');
+if (rise == 'ja') {
+	life = life - 30;
+	courage = courage + 2;
+	power = power + 1;
+	alert('Je begint de dag als een echte strijder! Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
+}
+else if (!(rise == 'ja')) {
+	alert('Je begint de dag uitgerust! Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
+}
 
-//2 clans bandieten vallen in bos een krijger aan. Zo te zien hebben ze ruzie met de krijger, maar ook met elkaar... Jonkheer Joris kijkt toe.
+alert('Je loopt door het bos en ziet twee clans bandieten een krijger aanvallen. Zo te zien hebben ze ruzie met de krijger, maar ook met elkaar....Jonkheer Joris kijkt toe.');
 console.log('De krijger in nood');
 var help = prompt('Ga je de krijger in nood helpen? Ja/Nee?');
 if (help == 'ja') {
@@ -143,7 +155,7 @@ if (help == 'ja') {
 	gold = gold + 5;
 	alert ('Je hebt ' + life + ' levens over. Power + 1 (' + power + '), Courage + 1 (' + courage + ') en goud + 5 (' + gold + ')');
 }
-else {
+else if (!(help == 'ja')) {
 	alert('Je ziet het gevaar in van de situatie, en wacht tot ze elkaar afmaken');
 	courage = courage - 1;
 	alert('Dit ging wel ten koste van je courage. Deze is nu -1 (' + courage + ')');
@@ -187,7 +199,6 @@ if (shopping == 'ja') {
 		alert('Je hebt een ' + armory + ' met als bonus +1 courage (' + courage + ')');
 	}
 	else if (gold < 5) {
-		armory = 'Dummy Sword'
 		courage = courage -1;
 		alert('Je bent te arm om iets te kopen. Je gaat verder met je '+ armory + '. Dit gaat ten koste van je courage - 1 (' + courage + ')');
 	}
@@ -196,8 +207,6 @@ else {
 	alert('Verstandig om niets te kopen, misschien dat je het later nodig hebt!');
 }
 alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
-
-
 
 prep();
 alert('Je voelt je net Rocky, goed bezig man!');
@@ -215,5 +224,4 @@ else {
 	alert('Ik ga nu tegen de draak vechten!');
 	fight();
 	decision();
-
 }
