@@ -44,6 +44,7 @@ function fight() {
 		if (power >=3){
 			alert('Je had genoeg kracht over om de draak te verslaan.');
 			dragon = true;
+			console.log('Prinses redden of ga je voor de poen?');
 			var safePrincess = prompt('Achter de draak zie je een zak goud. De weg achter je stort in door het hevige gevecht. Wil je de princess redden en de zak goud achterlaten? ja of nee?');
 			if ( safePrincess == 'ja'){
 				alert('Je hebt de princess gered!');
@@ -57,6 +58,7 @@ function fight() {
 		else {
 			alert ('Je hebt de draak niet kunnen doden, je had te weinig power over.');
 			dragon = false;
+			console.log('Prinses redden of ga je voor de poen?');
 			var safePrincess = prompt('Achter de draak zie je een zak goud. De weg achter je stort in door het hevige gevecht. Wil je de princess redden en de zak goud achterlaten?');
 			if (safePrincess == 'nee') {
 				alert ('Je hebt de princess niet gered. Je ging voor de poen. Je bent nu steenrijk! Misschien dat je sneeuwwitje het hof kunt maken met je doekoe\'s'); //ending maken
@@ -71,21 +73,68 @@ function fight() {
 }
 
 function decision() {
+	console.log('Ending thema');
 	if (dragon == true && princess == true) {
-		alert('Je hebt zowel de draak gedood en de princess gered. Je kan nu met haar trouwen'); // courage om haar ten huwelijk te vragen
+		alert('Je hebt zowel de draak gedood en de princess gered.'); // courage om haar ten huwelijk te vragen
+		power = 0;
+		alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
+		alert('Het is nu alweer een tijdje geleden dat jij de prinses gered hebt. Je ziet dat ze met Prince Adam (\'van Beauty and the Beast\') aan het flirten is.');
+		console.log('Trouwen of niet trouwen');
+		var marriage = prompt('De nood om met haar te trouwen is hoog, vooral nu het nog kan. Wil je met haar trouwen? Je hebt minimaal 3 courage nodig. (' + courage + ')');
+		if (marriage !== 'nee' && courage > 2) {
+			courage = 0;
+			alert('Gefeliciteerd je gaat met haar trouwen!');
+			alert('Jullie leefden nog lang en gelukkig!');
+		}
+		else if (marriage =='nee' || courage <= 2) {
+			courage = 0;
+			alert('Ze gaat er met prins Adam vandoor. Had nu dan toch voor het geld gekozen! Mogelijk was je courage toch te laag...');
+			alert('Dan maar snoepen bij de buren. Je ziet sneeuwwitje staan, die lijkt je ook wel wat....');
+			console.log ('Trouwen met sneeuwwitje anders?');
+			var marriageSecond = prompt ('Ze is een dure dame. Ga je met haar trouwen? Je hebt minimaal 15 goudstukken nodig  (' + gold + ')');
+			if (marriageSecond !== 'nee' && gold >= 15){
+				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
+				alert('Jullie leefden nog lang en gelukkig!');
+			}
+			else if (marriageSecond !== 'nee' && gold < 15) {
+				alert('Arme sloeber dat je bent. Je had te weinig goudstukken over om met Sneeuwwitje te trouwen. Was toch maar voor dat zak goud gegaan! Pocahontas daarentegen lijkt je ook wel wat....');
+				alert('Einde!');
+			}
+			else if (marriageSecond == 'nee') {
+				alert('Dure dames, dat vindt je niets! Je zag Pocahontas al eerder staan. Je gaat toch liever voor haar....');
+				alert('Einde!');
+			}
+		}
 	}
 	else if (dragon == true || princess == true) {
-		alert('test 2'); //of je hebt de draak gedood en gegaan voor de poen óf je hebt de draak niet gedood en gegaan voor de princes om te redden. Courage om sneeuwwitje of de prinses ten huwelijk te vragen.
+		alert('Je hebt je missie niet helemaal gehaald. De prinses is vast boos op je.');
+		alert('Een poostje later hoor je alsnog dat de prinses er met een ander vandoor is gegaan. Je hebt je leven voor niets geriskeerd, of wel soms??');
+		var marriage = ('Je ziet Pocahontas met Sneeuwwitje ruziemaken. Het ging over de held die de draak probeerde te verslaan. Daar ben je dan! Wil je met Sneeuwwitje trouwen? Ze is een dure dame en je hebt minimaal 15 goudstukken nodig  (' + gold + ') ');
+		if (marriage !== 'nee' && gold >= 15){
+				alert('Sneeuwwitje ziet je poen! Jazeker dat ze met je wilt trouwen. Was het toch maar slim om geen gear te kopen!');
+				alert('Jullie leefden nog lang en gelukkig');
+			}
+			else if (marriage !== 'nee' && gold < 15) {
+				alert('Arme sloeber dat je bent. Je had te weinig goudstukken over om met Sneeuwwitje te trouwen. Pocahontas daarentegen lijkt je ook wel wat....');
+				alert('Einde!');
+			}
+			else if (marriage == 'nee') {
+				alert('Dure dames, dat vindt je niets! Je zag Pocahontas al eerder staan. Je gaat toch liever voor haar....');
+				alert('Einde!');
 	}
+	}	
 	else if (dragon == false && princess == false) {
-		alert('test 3'); // bijna dood verhaal verder maken
+		alert('Je hebt zowel de draak niet kunnen verslaan, je bent ternauwernood ontsnapt! Heb je ook de prinses niet kunnen redden, wat jammer!');
+		alert('Je besluit door de schande om celibaat door het leven te gaan. Geen gelukkig einde!');
+		alert('Probeer het opnieuw en let goed op je levens voordat je tegen de draak gaat vechten!');
+
 	}
 }
 
 
 //2 clans bandieten vallen in bos een krijger aan. Zo te zien hebben ze ruzie met de krijger, maar ook met elkaar... Jonkheer Joris kijkt toe.
-var help = prompt('Ga je de krijger in nood helpen? Ja/Nee?');
 console.log('De krijger in nood');
+var help = prompt('Ga je de krijger in nood helpen? Ja/Nee?');
 if (help == 'ja') {
 	alert('Je weet ternauwernood te ontsnappen aan een dodelijke slag, met als gevolg dat je geraakt bent. Je hebt mooi wat goudstukken van de bandietten kunnen stelen');
 	life = life - 30;
@@ -153,7 +202,7 @@ alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt
 prep();
 alert('Je voelt je net Rocky, goed bezig man!');
 alert('Je courage is nu ' + courage + ', je levens zijn nu ' + life + ', je hebt ' + gold + ' goudstukken. Je power is nu ' + power + '.');
-console.log('Nogmaals trainen of niet?');
+console.log('Alvast tegen de draak vechten of nog doortrainen?');
 var moreTraining = prompt('Wil je alvast tegen de draak vechten? (ja of nee?)');
 if (moreTraining == 'ja') {
 	fight();
