@@ -7,6 +7,7 @@ var armory = 'Dummy Sword';
 var dragon = false;
 var princess = false;
 
+//Functie voor de voorbereiding van het gevecht tegen de draak.
 function prep() {
 alert ('Eenmaal aangekomen op het thuisfront sta je voor een keuze. Ik moet zo snel mogelijk de draak verslaan, maar ik moet mij eerst voorbereiden!...') 
 var preparation = prompt('Tijd voor de voorbereiding! Wil je trainen (+1 power en +1 courage), rusten (-1 courage en + 2 power) of mediteren? (volledige levens)');
@@ -38,6 +39,7 @@ var preparation = prompt('Tijd voor de voorbereiding! Wil je trainen (+1 power e
 	}
 }
 
+//Functie tijdens het vechten tegen de draak.
 function fight() {
 	if (life <=40 ) {
 		console.log('te weinig levens om de draak te verslaan');
@@ -84,6 +86,7 @@ function fight() {
 	}
 }
 
+//Functie van na het gevecht tegen de draak en het redden van de prinses.
 function decision() {
 	if (dragon == true && princess == true) {
 		console.log('Je hebt zowel de draak gedood als de prinses gered.');
